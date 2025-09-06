@@ -1,0 +1,114 @@
+name: {{ cookiecutter.project_slug }}
+description: "{{ cookiecutter.project_description }}"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: "{{ cookiecutter.flutter_version }}"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_bloc: ^9.1.1
+  bloc: ^9.0.0
+
+  # Dependency Injection
+  get_it: ^8.2.0
+  injectable: ^2.4.4
+
+  # Local Storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # Network
+  dio: ^5.4.3+1
+  retrofit: ^4.0.1
+  json_annotation: ^4.9.0
+
+  # Localization
+  easy_localization: ^3.0.7
+
+  # Logging
+  talker: ^5.0.0
+  talker_flutter: ^5.0.0
+  talker_bloc_logger: ^5.0.0
+  talker_dio_logger: ^5.0.0
+
+  # Utilities
+  equatable: ^2.0.5
+  freezed_annotation: ^2.4.4
+  dartz: ^0.10.1
+
+  # Navigation
+  go_router: ^14.6.2
+
+  # UI & Hooks
+  flutter_hooks: ^0.20.5
+  formz: ^0.7.0
+  flutter_screenutil: ^5.9.3
+  
+  # Environment & Configuration
+  envied: ^0.5.4+1
+  
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Code Generation
+  build_runner: ^2.4.13
+  injectable_generator: ^2.6.2
+  retrofit_generator: ^8.2.1
+  json_serializable: ^6.8.0
+  hive_generator: ^2.0.1
+  freezed: ^2.5.2
+
+  # Environment & Configuration
+  envied_generator: ^0.5.4+1
+  
+  # Native Splash Screen
+  flutter_native_splash: ^2.4.1
+  
+  # Linting
+  flutter_lints: ^6.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  # Assets
+  assets:
+    - assets/translations/
+    - assets/images/
+
+# Flutter Native Splash Configuration
+flutter_native_splash:
+  # Background color of the splash screen
+  color: "{{ cookiecutter.primary_color }}"
+  # Optional: Background image (uncomment and add image to assets/)
+  # background_image: "assets/images/splash_bg.png"
+  
+  # App icon configuration
+  image: assets/images/splash_icon.png
+  # Optional: Dark mode configuration
+  color_dark: "{{ cookiecutter.primary_color_dark }}"
+  image_dark: assets/images/splash_icon_dark.png
+  
+  # Android specific configuration
+  android_12:
+    # Android 12+ splash screen
+    image: assets/images/splash_icon.png
+    color: "{{ cookiecutter.primary_color }}"
+    image_dark: assets/images/splash_icon_dark.png
+    color_dark: "{{ cookiecutter.primary_color_dark }}"
+  
+  # iOS specific configuration
+  ios: true
+  
+  # Web configuration
+  web: true
+  web_image_mode: center

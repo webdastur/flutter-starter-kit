@@ -1,0 +1,24 @@
+{
+  "app": {
+    "title": "{{ cookiecutter.project_name }}",
+    "loading": "Cargando..."
+  },
+  "todos": {
+    "title": "Tareas",
+    "add": "Agregar Tarea",
+    "edit": "Editar Tarea",
+    "delete": "Eliminar Tarea",
+    "completed": "Completada",
+    "pending": "Pendiente",
+    "empty": "No se encontraron tareas",
+    "add_todo": "Agregar nueva tarea",
+    "todo_hint": "Ingrese descripción de la tarea",
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+  "errors": {
+    "network": "Ocurrió un error de red",
+    "unknown": "Ocurrió un error desconocido",
+    "validation": "Por favor verifique su entrada"
+  }
+}

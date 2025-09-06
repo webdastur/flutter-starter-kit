@@ -1,0 +1,24 @@
+{
+  "app": {
+    "title": "{{ cookiecutter.project_name }}",
+    "loading": "Loading..."
+  },
+  "todos": {
+    "title": "Todos",
+    "add": "Add Todo",
+    "edit": "Edit Todo",
+    "delete": "Delete Todo",
+    "completed": "Completed",
+    "pending": "Pending",
+    "empty": "No todos found",
+    "add_todo": "Add new todo",
+    "todo_hint": "Enter todo description",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "errors": {
+    "network": "Network error occurred",
+    "unknown": "An unknown error occurred",
+    "validation": "Please check your input"
+  }
+}
