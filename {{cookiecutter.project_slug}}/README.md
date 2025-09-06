@@ -239,7 +239,7 @@ Type-safe, composable form validation:
 class TodoTitle extends FormzInput<String, TodoTitleValidationError> {
   const TodoTitle.pure() : super.pure('');
   const TodoTitle.dirty([String value = '']) : super.dirty(value);
-
+  
   @override
   TodoTitleValidationError? validator(String value) {
     if (value.isEmpty) return TodoTitleValidationError.empty;
@@ -283,12 +283,12 @@ Supports multiple languages with **easy_localization**:
        "title": "Todos",
        "add_todo": "Add Todo",
        "edit_todo": "Edit Todo"
-     }
-   }
-   ```
+  }
+}
+```
 
 2. Use in code:
-   ```dart
+```dart
    Text('todos.title'.tr()),           // "Todos"
    Text('todos.add_todo'.tr()),        // "Add Todo"
    ```
