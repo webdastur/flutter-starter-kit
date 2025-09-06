@@ -57,7 +57,7 @@ pip install cookiecutter
 
 ### Generate Project
 ```bash
-cookiecutter https://github.com/yourusername/flutter-starter-template
+cookiecutter https://github.com/webdastur/flutter-starter-kit
 ```
 
 Or use local template:
