@@ -1,0 +1,22 @@
+# Environment variables template for {{ cookiecutter.project_name }}
+# Copy this content to a .env file in the project root
+# Make sure to add .env to your .gitignore file
+
+# API Configuration
+API_BASE_URL={{ cookiecutter.api_base_url }}
+API_TIMEOUT=30000
+
+# App Configuration
+APP_NAME={{ cookiecutter.project_name }}
+APP_VERSION=1.0.0
+DEBUG_MODE=true
+
+# Feature Flags
+ENABLE_LOGGING={{ cookiecutter.enable_logging }}
+ENABLE_CRASH_REPORTING={{ cookiecutter.enable_crash_reporting }}
+ENABLE_ANALYTICS={{ cookiecutter.enable_analytics }}
+
+# Third-party Services (add your actual keys here)
+FIREBASE_API_KEY=
+SENTRY_DSN=
+MIXPANEL_TOKEN=
