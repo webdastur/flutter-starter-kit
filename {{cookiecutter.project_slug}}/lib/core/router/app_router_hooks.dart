@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../domain/entities/todo_entity.dart';
-import \'../../presentation/todos/pages/add_todo_page_hooks.dart\';
-import \'../../presentation/todos/pages/todos_page_hooks.dart\';
+import '../../presentation/todos/pages/add_todo_page_hooks.dart';
+import '../../presentation/todos/pages/todos_page_hooks.dart';
 
 class AppRouterHooks {
   static const String todos = '/';
