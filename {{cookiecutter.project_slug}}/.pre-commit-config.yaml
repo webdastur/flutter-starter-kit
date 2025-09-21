@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: dart-import-sorter
+        name: Dart import sorter
+        entry: bash -lc "dart run import_sorter:main --exit-if-changed"
+        language: system
+        types: [dart]

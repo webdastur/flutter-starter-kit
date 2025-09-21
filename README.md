@@ -315,6 +315,47 @@ flutter test
 flutter drive --target=test_driver/app.dart
 ```
 
+## 🧰 Makefile Commands
+
+After generating a project, you can use the Makefile in the project root to speed up common tasks.
+
+```bash
+# Discover available commands
+make help
+
+# Install dependencies
+make setup         # or: make get
+
+# Code generation
+make gen           # one-time build
+make watch         # watch mode
+make gen-clean     # rebuild deleting conflicts
+
+# Quality
+make analyze       # static analysis
+make format        # dart format
+make sort-imports  # organize imports
+
+# Assets
+make splash        # (re)generate native splash assets
+
+# Testing
+make test
+
+# Run
+make run           # auto device
+make run-ios       # iOS simulator/device
+make run-android   # Android emulator/device
+
+# Clean
+make clean
+
+# Build
+make build-android # release APK
+make build-ios     # release iOS (requires Xcode setup)
+make build-web     # release Web
+```
+
 ## 📱 Platform Support
 
 - ✅ **Android** (API 21+)
