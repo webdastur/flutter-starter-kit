@@ -35,23 +35,44 @@ def setup_android_structure():
     package_name = "{{ cookiecutter.package_name }}"
     package_path = package_name.replace('.', '/')
     
-    # Create package directory structure
-    kotlin_dir = f"android/app/src/main/kotlin/{package_path}"
-    os.makedirs(kotlin_dir, exist_ok=True)
-    
-    # Move MainActivity.kt to correct location
-    if os.path.exists("android/app/src/main/kotlin/MainActivity.kt.template"):
-        shutil.move(
-            "android/app/src/main/kotlin/MainActivity.kt.template",
-            f"{kotlin_dir}/MainActivity.kt"
-        )
-        print(f"✅ Created MainActivity.kt in {kotlin_dir}")
-    
-    # Remove old directory structure if it exists
+    # Remove any old directory structure first (but preserve template)
     old_kotlin_dir = "android/app/src/main/kotlin/com"
     if os.path.exists(old_kotlin_dir):
         shutil.rmtree(old_kotlin_dir)
         print("✅ Cleaned up old Android package structure")
+    
+    # Create package directory structure
+    kotlin_dir = f"android/app/src/main/kotlin/{package_path}"
+    os.makedirs(kotlin_dir, exist_ok=True)
+    print(f"✅ Created kotlin directory: {kotlin_dir}")
+    
+    # Move MainActivity.kt.template to correct location or create if missing
+    template_path = "android/app/src/main/kotlin/MainActivity.kt.template"
+    target_path = f"{kotlin_dir}/MainActivity.kt"
+    
+    if os.path.exists(template_path):
+        # Move the template file to the correct package location
+        shutil.move(template_path, target_path)
+        print(f"✅ Moved MainActivity.kt from template to {kotlin_dir}")
+    else:
+        # Fallback: create MainActivity.kt directly if template is missing
+        main_activity_content = (
+            f"package {package_name}\n\n"
+            "import io.flutter.embedding.android.FlutterActivity\n\n"
+            "class MainActivity : FlutterActivity()\n"
+        )
+        with open(target_path, "w") as f:
+            f.write(main_activity_content)
+        print(f"✅ Created MainActivity.kt in {kotlin_dir} (fallback)")
+    
+    # Verify the file was created
+    if os.path.exists(target_path):
+        print(f"✅ MainActivity.kt verified at: {target_path}")
+        with open(target_path, 'r') as f:
+            content = f.read()
+            print(f"📄 Content preview: {content[:100]}...")
+    else:
+        print(f"❌ MainActivity.kt NOT found at: {target_path}")
 
 
 def clean_generated_files():
